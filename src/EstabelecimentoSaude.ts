@@ -1,4 +1,4 @@
-import { Integra } from "./Integra";
+import { Integra, TipoDoEnvio } from "./Integra";
 
 /**
  * Classe responsável por atualizar as informações dos Estabelecimentos de Saúde.
