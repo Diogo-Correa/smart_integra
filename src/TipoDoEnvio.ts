@@ -6,7 +6,7 @@
  * 
  * Observação: O SMART assume o valor padrão para Reprocessamento (RE).
  */
-class TipoDoEnvio {
+export class TipoDoEnvio {
     static NOVO_ATUALIZACAO: string = 'NA'; // TipoDoEnvio.NOVO_ATUALIZACAO
     static REPROCESSAMENTO: string = 'RE';  // TipoDoEnvio.REPROCESSAMENTO
 }

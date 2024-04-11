@@ -1,9 +1,10 @@
 import { Integra } from "./Integra";
+import { TipoDoEnvio } from "./TipoDoEnvio";
 
 /**
  * Classe responsável por cadastrar/atualizar os dados de profissionais de saúde.
  */
-class ProfissionalSaude {
+export class ProfissionalSaude {
     codigo_nucleo: string;
     mes_referencia: string;
     tipo_envio: string;

@@ -1,11 +1,12 @@
 import { Integra } from "./Integra";
+import { TipoDoEnvio } from "./TipoDoEnvio";
 
 /**
  * Classe responsável por armazenar as solicitações de teleconsultoria.
  * @since 2.0 Adicionado na versão 2.0 do Serviço REST do SMART (lançado em meados de fevereiro de 2016).
  * @author Allyson Barros
  */
-class Teleconsultoria {
+export class Teleconsultoria {
     codigo_nucleo: string = "";
     mes_referencia: string = "";
     tipo_envio: string = "";

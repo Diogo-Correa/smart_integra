@@ -1,6 +1,13 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { TipoDeDados } from './TipoDados';
 import { EstabelecimentoSaude } from './EstabelecimentoSaude';
+import { Teleconsultoria } from './Teleconsultoria';
+import { ProfissionalSaude } from './ProfissionalSaude';
+import { TipoObjetoAprendizagem } from './TipoObjetoAprendizagem';
+import { TeleeducacaoObjetoAprendizagem } from './TeleeducacaoObjetoAprendizagem';
+import { TipoDoEnvio } from './TipoDoEnvio';
+import { TeleeducacaoCurso } from './TeleeducacaoCurso';
+import { Sexo } from './Sexo';
 
 /**
  * Classe responsável por empacotar os dados e enviá-los para o webservice.
@@ -125,6 +132,13 @@ export {
      * @param token_autenticacao
      */
     TipoDeDados,
-    EstabelecimentoSaude
+    EstabelecimentoSaude,
+    Teleconsultoria,
+    ProfissionalSaude,
+    TipoDoEnvio,
+    TipoObjetoAprendizagem,
+    TeleeducacaoObjetoAprendizagem,
+    TeleeducacaoCurso,
+    Sexo
 };
 
