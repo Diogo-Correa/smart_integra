@@ -1,5 +1,6 @@
 import { Integra } from "./Integra";
 import { TipoDoEnvio } from "./TipoDoEnvio";
+import { TeleconsultaInterface } from "./interfaces/TeleconsultaInterface";
 
 /**
  * Classe responsável por armazenar as solicitações de teleconsultoria.
@@ -59,49 +60,17 @@ export class Teleconsultoria {
      * @param ponto_telessaude_teleconsultor Código CNES do estabelecimento de saúde no qual o profissional solicitante atua
      */
     addSolicitacao(
-        dh_solicitacao: string, tipo: TipoTeleconsultoria, canal_acesso_sincrona: CanalAcesso, cpf_solicitante: string, especialidade_solicitante: string,
-        ponto_telessaude_solicitacao: string, equipe_do_solicitante: string, tipo_profissional: string, cids: string[], ciaps: string[],
-        dh_resposta_solicitacao: string, evitou_encaminhamento: boolean, intensao_encaminhamento: boolean, grau_satisfacao: string,
-        resolucao_duvida: string, potencial_sof: boolean, pergunta: string, resposta: string, ref_resposta: string, link_resposta: string,
-        tipo_telediagnostico: string, origem_financiamento: string, classificacao_solicitacao: string, cpf_teleconsultor: string,
-        especialidade_teleconsultor: string, ponto_telessaude_teleconsultor: string
+        data: TeleconsultaInterface
     ) {
-        if (!dh_solicitacao || !cpf_solicitante) {
+        if (!data.dh_solicitacao || !data.cpf_solicitante) {
             throw new Error("Data/Hora da solicitação e CPF do solicitante são obrigatórios.");
         }
 
-        if (tipo === TipoTeleconsultoria.SINCRONA && !canal_acesso_sincrona) {
+        if (data.tipo === TipoTeleconsultoria.SINCRONA && !data.canal_acesso_sincrona) {
             throw new Error("Canal de acesso síncrono é obrigatório para teleconsultorias síncronas.");
         }
 
-        let teleconsultoria = {
-            dh_solicitacao: dh_solicitacao,
-            tipo: tipo,
-            canal_acesso_sincrona: canal_acesso_sincrona,
-            cpf_solicitante: cpf_solicitante,
-            especialidade_solicitante: especialidade_solicitante,
-            ponto_telessaude_solicitacao: ponto_telessaude_solicitacao,
-            equipe_do_solicitante: equipe_do_solicitante,
-            tipo_profissional: tipo_profissional,
-            cids: cids,
-            ciaps: ciaps,
-            dh_resposta_solicitacao: dh_resposta_solicitacao,
-            evitou_encaminhamento: evitou_encaminhamento,
-            intensao_encaminhamento: intensao_encaminhamento,
-            grau_satisfacao: grau_satisfacao,
-            resolucao_duvida: resolucao_duvida,
-            potencial_sof: potencial_sof,
-            pergunta: pergunta,
-            resposta: resposta,
-            ref_resposta: ref_resposta,
-            link_resposta: link_resposta,
-            tipo_telediagnostico: tipo_telediagnostico,
-            origem_financiamento: origem_financiamento,
-            classificacao_solicitacao: classificacao_solicitacao,
-            cpf_teleconsultor: cpf_teleconsultor,
-            especialidade_teleconsultor: especialidade_teleconsultor,
-            ponto_telessaude_teleconsultor: ponto_telessaude_teleconsultor
-        };
+        let teleconsultoria = data;
 
         this.teleconsultorias.push(teleconsultoria);
     }
