@@ -1,4 +1,5 @@
 import { Integra, TipoDoEnvio } from "./Integra";
+import { EstabelecimentoInterface } from "./interfaces/EstabelecimentoInterface";
 
 /**
  * Classe responsável por atualizar as informações dos Estabelecimentos de Saúde.
@@ -20,12 +21,12 @@ export class EstabelecimentoSaude {
         this.estabelecimentos = [];
     }
 
-    atualizarEstabelecimentoSaude(codigo_cnes: string, cadastrado_servico_teleconsultoria: boolean, cadastrado_servico_teleeducacao: boolean, cadastrado_servico_telediagnostico: boolean) {
+    atualizarEstabelecimentoSaude(data: EstabelecimentoInterface) {
         const estabelecimento_saude = {
-            cnes: codigo_cnes,
-            tconsul: cadastrado_servico_teleconsultoria ? "1" : "0",
-            teduca: cadastrado_servico_teleeducacao ? "1" : "0",
-            tdiagn: cadastrado_servico_telediagnostico ? "1" : "0"
+            cnes: data.codigo_cnes,
+            tconsul: data.cadastrado_servico_teleconsultoria ? "1" : "0",
+            teduca: data.cadastrado_servico_teleeducacao ? "1" : "0",
+            tdiagn: data.cadastrado_servico_telediagnostico ? "1" : "0"
         };
 
         this.estabelecimentos.push(estabelecimento_saude);
