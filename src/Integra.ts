@@ -8,6 +8,7 @@ import { TeleeducacaoObjetoAprendizagem } from './TeleeducacaoObjetoAprendizagem
 import { TipoDoEnvio } from './TipoDoEnvio';
 import { TeleeducacaoCurso } from './TeleeducacaoCurso';
 import { Sexo } from './Sexo';
+import { Telediagnostico } from './Telediagnostico';
 
 /**
  * Classe responsável por empacotar os dados e enviá-los para o webservice.
@@ -139,6 +140,7 @@ export {
     TipoObjetoAprendizagem,
     TeleeducacaoObjetoAprendizagem,
     TeleeducacaoCurso,
-    Sexo
+    Sexo,
+    Telediagnostico
 };
 
