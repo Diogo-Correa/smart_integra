@@ -1,6 +1,6 @@
 {
   "name": "smart_integra",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "lib to integrate with smart api",
   "main": "./src/Integra.ts",
   "scripts": {
