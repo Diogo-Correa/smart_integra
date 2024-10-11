@@ -45,13 +45,22 @@ export class Integra {
                     const config: AxiosRequestConfig = {
                         headers: {
                             'Authorization': 'Token ' + this.token_autenticacao,
-                            'Content-Type': tipoDeDados === TipoDeDados.JSON ? 'application/json' : ''
+                            'Content-Type': 'application/json',
                         }
                     };
                     const response = await axios.post(url, dados, config);
-                    return response.data;
+
+                    if (response && response.data) {
+                        return response.data;
+                    } else {
+                        throw new Error("Resposta inválida do servidor.");
+                    }
                 } catch (error: any) {
-                    return error.response.data;
+                    if (error.response) {
+                        return error.response.data || { message: "Erro no servidor", status: error.response.status };
+                    } else {
+                        return { message: error.message || "Erro desconhecido ao enviar dados" };
+                    }
                 }
             } else {
                 throw new Error("O formato XML ainda não foi implementado.");
